@@ -363,7 +363,8 @@
         '<img class="cart-thumb" src="' + item.img + '" alt="' + escapeHtml(item.name) + '" />' +
         '<div class="cart-info">' +
         "<h4>" + escapeHtml(item.name) + "</h4>" +
-        '<p class="cart-unit">' + escapeHtml(item.canteenName) + " &middot; " + formatRp(item.price) + " / item</p>" +
+        '<p class="cart-origin">Dari ' + escapeHtml(item.canteenName) + "</p>" +
+        '<p class="cart-unit">' + formatRp(item.price) + " / item</p>" +
         '<p class="cart-sub">Subtotal: ' + formatRp(item.price * qty) + "</p>" +
         "</div>" +
         '<div class="cart-stepper">' +
@@ -443,6 +444,7 @@
       row.className = "pay-row";
       row.innerHTML =
         '<div><span class="pay-name">' + escapeHtml(item.name) + "</span>" +
+        '<span class="pay-origin">Dari ' + escapeHtml(item.canteenName) + "</span>" +
         '<span class="pay-qty">' + qty + " x " + formatRp(item.price) + "</span></div>" +
         '<span class="pay-amt">' + formatRp(item.price * qty) + "</span>";
       list.appendChild(row);
