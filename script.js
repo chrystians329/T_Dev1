@@ -1,14 +1,13 @@
 (function () {
   "use strict";
 
-  /* ============================================================
-   * DATA MENTAH
-   * ============================================================ */
+  // Menu catalog
   const CANTEENS = [
     {
       id: "A",
       name: "Kantin A",
       sub: "Mie, Bakso & Kuah Hangat",
+      logoImage: "Asset/logo-store/kantin-A-hero.png",
       items: [
         { name: "Mie Ayam Original", price: 10000, img: "Asset/mie-ayam.jpg" },
         { name: "Bakso Sapi Urat", price: 12000, img: "Asset/bakso.jpg" },
@@ -23,6 +22,7 @@
       id: "B",
       name: "Kantin B",
       sub: "Nasi, Ayam & Lauk Pauk",
+      logoImage: "Asset/logo-store/Kantin-B-hero.png",
       items: [
         { name: "Nasi Ayam Geprek", price: 13000, img: "Asset/ayam-geprek.jpg" },
         { name: "Nasi Telur Balado", price: 10000, img: "Asset/telur-balado.jpg" },
@@ -38,6 +38,7 @@
       id: "C",
       name: "Kantin C",
       sub: "Soto & Masakan Tradisional",
+      logoImage: "Asset/logo-store/Kantin-C-hero.jpg",
       items: [
         { name: "Soto Ayam Lamongan", price: 12000, img: "Asset/soto-ayam.jpg" },
         { name: "Rawon Daging", price: 15000, img: "Asset/rawon.jpg" },
@@ -52,6 +53,7 @@
       id: "D",
       name: "Kantin D",
       sub: "Jajanan & Gorengan",
+      logoImage: "Asset/logo-store/kantin-D-hero.png",
       items: [
         { name: "Martabak Telur", price: 12000, img: "Asset/martabak-telur.jpg" },
         { name: "Sosis Bakar", price: 8000, img: "Asset/sosis-bakar.jpg" },
@@ -66,6 +68,7 @@
       id: "E",
       name: "Kantin E",
       sub: "Nasi Kuning & Menu Istimewa",
+      logoImage: "Asset/logo-store/kantin-E-hero.png",
       items: [
         { name: "Nasi Kuning Komplit", price: 12000, img: "Asset/nasi-kuning.jpg" },
         { name: "Rendang Sapi", price: 18000, img: "Asset/rendang.jpg" },
@@ -78,9 +81,7 @@
     }
   ];
 
-  /* ============================================================
-   * UTIL
-   * ============================================================ */
+  // Helpers
   const $ = (sel, root) => (root || document).querySelector(sel);
   const $$ = (sel, root) => Array.from((root || document).querySelectorAll(sel));
 
@@ -99,11 +100,9 @@
     set(key, val) { try { localStorage.setItem(key, val); } catch (e) { /* ignore */ } }
   };
 
-  /* ============================================================
-   * STATE
-   * ============================================================ */
-  const itemIndex = new Map(); // id -> { id, name, price, img, canteenId, canteenName }
-  const cart = new Map();      // id -> qty
+  // App state
+  const itemIndex = new Map(); // Menu items by ID
+  const cart = new Map(); // Quantities by item ID
 
   CANTEENS.forEach((c) => {
     c.items.forEach((it, i) => {
@@ -113,15 +112,12 @@
         name: it.name,
         price: it.price,
         img: it.img,
-        canteenId: c.id,
         canteenName: c.name
       });
     });
   });
 
-  /* ============================================================
-   * RENDER: nav + sections
-   * ============================================================ */
+  // Render navigation and menu sections
   const navLinks = $("#navLinks");
   const sectionsRoot = $("#canteenSections");
 
@@ -140,11 +136,27 @@
       section.className = "canteen-section";
       section.id = "kantin-" + c.id;
 
+      const hero = document.createElement("header");
+      hero.className = "section-hero";
+      hero.innerHTML =
+        '<img class="section-hero-image" src="' + escapeHtml(c.items[0].img) + '" alt="" aria-hidden="true" />' +
+        '<div class="store-avatar" aria-hidden="true">' +
+          '<img class="store-mark" src="' + escapeHtml(c.logoImage) + '" alt="" />' +
+          '<span class="store-name-badge">' + escapeHtml(c.name) + '</span>' +
+        '</div>' +
+        '<div class="hero-copy">' +
+          '<p class="hero-eyebrow">Pilihan kantin sekolah</p>' +
+          '<h2 id="kantin-title-' + escapeHtml(c.id) + '">' + escapeHtml(c.name) + '</h2>' +
+          '<p class="hero-description">' + escapeHtml(c.sub) + '</p>' +
+        '</div>';
+      hero.setAttribute("aria-labelledby", "kantin-title-" + c.id);
+      section.appendChild(hero);
+
       const head = document.createElement("div");
-      head.className = "section-head";
+      head.className = "section-heading";
       head.innerHTML =
-        "<h2>" + escapeHtml(c.name) + "</h2>" +
-        '<span class="count">' + c.items.length + " menu</span>";
+        '<div><p class="section-kicker">Lagi tersedia</p><h3>Menu untuk kamu</h3></div>' +
+        '<span class="count">' + c.items.length + " pilihan</span>";
       section.appendChild(head);
 
       const grid = document.createElement("div");
@@ -236,15 +248,9 @@
     });
   }
 
-  /* ============================================================
-   * SECTION SWITCHING
-   * ============================================================ */
-  let activeCanteen = CANTEENS[0].id;
-
+  // Section switching
   function activateSection(canteenId, scroll) {
-    const target = CANTEENS.find((c) => c.id === canteenId);
-    if (!target) return;
-    activeCanteen = canteenId;
+    if (!CANTEENS.some((canteen) => canteen.id === canteenId)) return;
 
     $$(".canteen-section").forEach((s) => s.classList.remove("active"));
     const section = $("#kantin-" + canteenId);
@@ -267,9 +273,7 @@
     }
   }
 
-  /* ============================================================
-   * CART
-   * ============================================================ */
+  // Shopping cart
   function addItem(id, delta) {
     const item = itemIndex.get(id);
     if (!item) return;
@@ -302,9 +306,7 @@
     renderSheet();
   }
 
-  /* ============================================================
-   * BOTTOM SHEET (persistent + draggable)
-   * ============================================================ */
+  // Cart sheet
   const sheetWrap = $("#sheetWrap");
   const sheet = $("#bottomSheet");
   const sheetBody = $("#sheetBody");
@@ -325,16 +327,13 @@
     else collapseSheet();
   }
 
-  function openSheet(opts) {
-    opts = opts || {};
+  function openSheet() {
     if (cart.size === 0) return;
     renderSheet();
     const wasHidden = sheetWrap.hidden;
     sheetWrap.hidden = false;
     document.body.classList.add("cart-active");
-    if (opts.expand === true || (wasHidden && opts.expand !== false)) {
-      expandSheet();
-    }
+    if (wasHidden) expandSheet();
   }
 
   function hideSheet() {
@@ -417,9 +416,7 @@
     }
   }
 
-  /* ============================================================
-   * PAYMENT MODAL
-   * ============================================================ */
+  // Payment dialog
   const payWrap = $("#payWrap");
 
   function openPay() {
@@ -465,9 +462,7 @@
     showToast("Pembayaran telah selesai. Terima kasih! 🎉");
   }
 
-  /* ============================================================
-   * ACCOUNT PANEL
-   * ============================================================ */
+  // Account panel
   const accountPanel = $("#accountPanel");
   const overlay = $("#overlay");
   const feedbackToggle = $("#feedbackToggle");
@@ -520,9 +515,7 @@
     document.body.style.overflow = locked ? "hidden" : "";
   }
 
-  /* ============================================================
-   * TOAST
-   * ============================================================ */
+  // Toast notifications
   let toastTimer = null;
   function showToast(msg) {
     const toast = $("#toast");
@@ -532,9 +525,7 @@
     toastTimer = setTimeout(() => toast.classList.remove("show"), 2600);
   }
 
-  /* ============================================================
-   * THEME
-   * ============================================================ */
+  // Color theme
   function initTheme() {
     const stored = storage.get("pojokteras.theme");
     const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -549,9 +540,7 @@
     storage.set("pojokteras.theme", next);
   }
 
-  /* ============================================================
-   * WIRING
-   * ============================================================ */
+  // Event handlers
   function wire() {
     $("#themeToggle").addEventListener("click", toggleTheme);
 
@@ -616,9 +605,7 @@
     });
   }
 
-  /* ============================================================
-   * INIT
-   * ============================================================ */
+  // Start the app
   function init() {
     initTheme();
     applyAccount();

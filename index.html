@@ -8,14 +8,14 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="navbar" id="navbar">
+  <header class="navbar">
     <div class="nav-inner">
       <button class="icon-btn hamburger" id="hamburger" type="button" aria-label="Buka menu akun" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <button class="brand" id="brandBtn" type="button" aria-label="Kembali ke beranda">
         <span class="brand-logo" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="118" height="118" fill="none">
+          <svg viewBox="0 0 24 24" fill="none">
             <path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
             <path d="M12 6.5 7 9.3v5.4l5 2.8 5-2.8V9.3L12 6.5Z" fill="currentColor" opacity=".22"/>
             <path d="M12 6.5v11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
@@ -77,7 +77,7 @@
             <label for="fbMessage">Pesan</label>
             <textarea id="fbMessage" name="pesan" rows="3" placeholder="Tulis masukanmu..." required></textarea>
 
-            <button class="btn btn-primary" type="submit" id="feedbackSubmit">Kirim Feedback</button>
+            <button class="btn btn-primary" type="submit">Kirim Feedback</button>
           </form>
         </div>
       </div>
@@ -122,7 +122,7 @@
   <!-- Payment modal -->
   <div class="modal-wrap" id="payWrap" hidden>
     <div class="modal-backdrop" id="payBackdrop"></div>
-    <section class="modal" id="payModal" role="dialog" aria-modal="true" aria-label="Konfirmasi pembayaran">
+    <section class="modal" role="dialog" aria-modal="true" aria-label="Konfirmasi pembayaran">
       <div class="modal-head">
         <h2>Konfirmasi Pembayaran</h2>
         <button class="panel-close" id="payClose" type="button" aria-label="Tutup">&times;</button>
@@ -135,7 +135,7 @@
         </div>
         <div class="pay-methods">
           <p class="pay-methods-title">Metode Pembayaran</p>
-          <div class="method-grid" id="methodGrid">
+          <div class="method-grid">
             <label class="method"><input type="radio" name="payMethod" value="QRIS" /><span>QRIS</span></label>
             <label class="method"><input type="radio" name="payMethod" value="GoPay" /><span>GoPay</span></label>
             <label class="method"><input type="radio" name="payMethod" value="DANA" /><span>DANA</span></label>
