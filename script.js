@@ -579,7 +579,6 @@
 
     $("#feedbackForm").addEventListener("submit", (e) => {
       e.preventDefault();
-      const form = e.currentTarget;
       const name = $("#fbName").value.trim();
       const topic = $("#fbTopic").value.trim();
       const msg = $("#fbMessage").value.trim();
@@ -587,9 +586,13 @@
         showToast("Mohon isi semua kolom feedback.");
         return;
       }
-      form.reset();
+      const subject = "[Pojok Teras] Feedback: " + topic;
+      const body = "Nama: " + name + "\nTopik: " + topic + "\n\nPesan:\n" + msg;
+      const mailto = "mailto:chrystians329@gmail.com?subject=" +
+        encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+      window.location.href = mailto;
       closePanel();
-      showToast("Feedback terkirim. Terima kasih, " + name + "!");
+      showToast("Draf email disiapkan. Tekan Kirim di aplikasi email kamu.");
     });
 
     $("#footerFeedback").addEventListener("click", (e) => {
