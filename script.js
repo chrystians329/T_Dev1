@@ -9,13 +9,13 @@
       sub: "Mie, Bakso & Kuah Hangat",
       logoImage: "Asset/logo-store/kantin-A-hero.png",
       items: [
-        { name: "Mie Ayam Original", price: 10000, img: "Asset/mie-ayam.jpg" },
-        { name: "Bakso Sapi Urat", price: 12000, img: "Asset/bakso.jpg" },
-        { name: "Pangsit Goreng", price: 8000, img: "Asset/pangsit.jpg" },
-        { name: "Mie Goreng Spesial", price: 11000, img: "Asset/mie-goreng.jpg" },
-        { name: "Kwetiau Ayam", price: 12000, img: "Asset/kwetiau.jpg" },
-        { name: "Es Teh Manis", price: 4000, img: "Asset/es-teh.jpg" },
-        { name: "Teh Tarik", price: 6000, img: "Asset/teh-tarik.jpg" }
+        { name: "Mie Ayam Original", price: 10000, img: "Asset/Menu/mie-ayam.jpg" },
+        { name: "Bakso Sapi Urat", price: 12000, img: "Asset/Menu/bakso.jpg" },
+        { name: "Pangsit Goreng", price: 8000, img: "Asset/Menu/pangsit.jpg" },
+        { name: "Mie Goreng Spesial", price: 11000, img: "Asset/Menu/mie-goreng.jpg" },
+        { name: "Kwetiau Ayam", price: 12000, img: "Asset/Menu/kwetiau.jpg" },
+        { name: "Es Teh Manis", price: 4000, img: "Asset/Menu/es-teh.jpg" },
+        { name: "Teh Tarik", price: 6000, img: "Asset/Menu/teh-tarik.jpg" }
       ]
     },
     {
@@ -24,14 +24,14 @@
       sub: "Nasi, Ayam & Lauk Pauk",
       logoImage: "Asset/logo-store/Kantin-B-hero.png",
       items: [
-        { name: "Nasi Ayam Geprek", price: 13000, img: "Asset/ayam-geprek.jpg" },
-        { name: "Nasi Telur Balado", price: 10000, img: "Asset/telur-balado.jpg" },
-        { name: "Nasi Uduk Komplit", price: 9000, img: "Asset/nasi-uduk.jpg" },
-        { name: "Tempe Orek", price: 5000, img: "Asset/tempe-orek.jpg" },
-        { name: "Sayur Asem", price: 6000, img: "Asset/sayur-asem.jpg" },
-        { name: "Kerupuk Udang", price: 2000, img: "Asset/kerupuk.jpg" },
-        { name: "Air Mineral", price: 3000, img: "Asset/air-mineral.jpg" },
-        { name: "Es Jeruk Peras", price: 5000, img: "Asset/es-jeruk.jpg" }
+        { name: "Nasi Ayam Geprek", price: 13000, img: "Asset/Menu/ayam-geprek.jpg" },
+        { name: "Nasi Telur Balado", price: 10000, img: "Asset/Menu/telur-balado.jpg" },
+        { name: "Nasi Uduk Komplit", price: 9000, img: "Asset/Menu/nasi-uduk.jpg" },
+        { name: "Tempe Orek", price: 5000, img: "Asset/Menu/tempe-orek.jpg" },
+        { name: "Sayur Asem", price: 6000, img: "Asset/Menu/sayur-asem.jpg" },
+        { name: "Kerupuk Udang", price: 2000, img: "Asset/Menu/kerupuk.jpg" },
+        { name: "Air Mineral", price: 3000, img: "Asset/Menu/air-mineral.jpg" },
+        { name: "Es Jeruk Peras", price: 5000, img: "Asset/Menu/es-jeruk.jpg" }
       ]
     },
     {
@@ -40,13 +40,13 @@
       sub: "Soto & Masakan Tradisional",
       logoImage: "Asset/logo-store/Kantin-C-hero.jpg",
       items: [
-        { name: "Soto Ayam Lamongan", price: 12000, img: "Asset/soto-ayam.jpg" },
-        { name: "Rawon Daging", price: 15000, img: "Asset/rawon.jpg" },
-        { name: "Gado-Gado", price: 10000, img: "Asset/gado-gado.jpg" },
-        { name: "Pecel Sayur", price: 9000, img: "Asset/pecel.jpg" },
-        { name: "Lontong Sayur", price: 11000, img: "Asset/lontong-sayur.jpg" },
-        { name: "Es Cendol Dawet", price: 7000, img: "Asset/cendol.jpg" },
-        { name: "Tahu Isi", price: 4000, img: "Asset/tahu-isi.jpg" }
+        { name: "Soto Ayam Lamongan", price: 12000, img: "Asset/Menu/soto-ayam.jpg" },
+        { name: "Rawon Daging", price: 15000, img: "Asset/Menu/rawon.jpg" },
+        { name: "Gado-Gado", price: 10000, img: "Asset/Menu/gado-gado.jpg" },
+        { name: "Pecel Sayur", price: 9000, img: "Asset/Menu/pecel.jpg" },
+        { name: "Lontong Sayur", price: 11000, img: "Asset/Menu/lontong-sayur.jpg" },
+        { name: "Es Cendol Dawet", price: 7000, img: "Asset/Menu/cendol.jpg" },
+        { name: "Tahu Isi", price: 4000, img: "Asset/Menu/tahu-isi.jpg" }
       ]
     },
     {
@@ -55,13 +55,13 @@
       sub: "Jajanan & Gorengan",
       logoImage: "Asset/logo-store/kantin-D-hero.png",
       items: [
-        { name: "Martabak Telur", price: 12000, img: "Asset/martabak-telur.jpg" },
-        { name: "Sosis Bakar", price: 8000, img: "Asset/sosis-bakar.jpg" },
-        { name: "Roti Bakar Coklat", price: 9000, img: "Asset/roti-bakar.jpg" },
-        { name: "Pisang Goreng Keju", price: 6000, img: "Asset/pisang-goreng.jpg" },
-        { name: "Cireng Bumbu Rujak", price: 5000, img: "Asset/cireng.jpg" },
-        { name: "Batagor", price: 10000, img: "Asset/batagor.jpg" },
-        { name: "Es Doger", price: 8000, img: "Asset/es-doger.jpg" }
+        { name: "Martabak Telur", price: 12000, img: "Asset/Menu/martabak-telur.jpg" },
+        { name: "Sosis Bakar", price: 8000, img: "Asset/Menu/sosis-bakar.jpg" },
+        { name: "Roti Bakar Coklat", price: 9000, img: "Asset/Menu/roti-bakar.jpg" },
+        { name: "Pisang Goreng Keju", price: 6000, img: "Asset/Menu/pisang-goreng.jpg" },
+        { name: "Cireng Bumbu Rujak", price: 5000, img: "Asset/Menu/cireng.jpg" },
+        { name: "Batagor", price: 10000, img: "Asset/Menu/batagor.jpg" },
+        { name: "Es Doger", price: 8000, img: "Asset/Menu/es-doger.jpg" }
       ]
     },
     {
@@ -70,13 +70,13 @@
       sub: "Nasi Kuning & Menu Istimewa",
       logoImage: "Asset/logo-store/kantin-E-hero.png",
       items: [
-        { name: "Nasi Kuning Komplit", price: 12000, img: "Asset/nasi-kuning.jpg" },
-        { name: "Rendang Sapi", price: 18000, img: "Asset/rendang.jpg" },
-        { name: "Sate Ayam Madura", price: 15000, img: "Asset/sate-ayam.jpg" },
-        { name: "Ikan Bakar Kecap", price: 17000, img: "Asset/ikan-bakar.jpg" },
-        { name: "Perkedel Kentang", price: 4000, img: "Asset/perkedel.jpg" },
-        { name: "Sambal Terasi", price: 3000, img: "Asset/sambal-terasi.jpg" },
-        { name: "Es Kelapa Muda", price: 8000, img: "Asset/es-kelapa.jpg" }
+        { name: "Nasi Kuning Komplit", price: 12000, img: "Asset/Menu/nasi-kuning.jpg" },
+        { name: "Rendang Sapi", price: 18000, img: "Asset/Menu/rendang.jpg" },
+        { name: "Sate Ayam Madura", price: 15000, img: "Asset/Menu/sate-ayam.jpg" },
+        { name: "Ikan Bakar Kecap", price: 17000, img: "Asset/Menu/ikan-bakar.jpg" },
+        { name: "Perkedel Kentang", price: 4000, img: "Asset/Menu/perkedel.jpg" },
+        { name: "Sambal Terasi", price: 3000, img: "Asset/Menu/sambal-terasi.jpg" },
+        { name: "Es Kelapa Muda", price: 8000, img: "Asset/Menu/es-kelapa.jpg" }
       ]
     }
   ];
